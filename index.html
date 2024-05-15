@@ -1,0 +1,318 @@
+<div class="containerWrapper">
+    <div class="container">
+        <div class="item">
+            <span>Пятерки</span>
+            <div>
+                <span class="MinFive">-</span><input type="number" name="" class="input" id="a"><span class="PlusFive">+</span>
+            </div>
+        </div>
+        <div class="item">
+            <span>Четверки</span>
+            <div>
+                <span class="MinFour">-</span><input type="number" name="" class="input" id="b" ><span class="PlusFour">+</span>
+            </div>
+        </div>
+        <div class="item">
+            <span>Тройки</span>
+            <div>
+                <span class="MinThree">-</span><input type="number" name="" class="input" id="c"><span class="PlusThree">+</span>
+            </div>
+        </div>
+    </div>
+        <div class="itemCalc">
+            <p class="span_width">Средний балл</p>
+            <p class="output">0</p>
+        </div>
+        <button class="calc">Рассчитать</button>
+
+</div>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+span {
+cursor: pointer;
+}
+
+body {
+margin: 0px 0px;
+padding-top: 20px;
+}
+
+.containerWrapper{
+display: flex;
+justify-content: center;
+font-family: "Manrope";
+font-size: 20px;
+font-weight: 600;
+height: 250px;
+background-color: #0937fd;
+color: white;
+}
+
+.container{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+    height: 150px;
+    top: 2%;
+    left: 15%;
+}
+
+.item{
+display: flex;
+flex-direction: column;
+gap: 15px;
+text-align: center;
+}
+.item div{
+display: flex;
+gap: 15px;
+text-align: center;
+}
+
+.input { 
+width: 70px;
+border-radius: 20px;
+border-color: white; 
+border-width: 0px;
+border: none;
+text-align: center;
+height: 40px;
+font-family: "Manrope";
+justify-content: center;
+display: block;
+
+}
+.calc {
+display: flex;
+position: relative;
+cursor: pointer;
+border-radius: 20px;
+border-width: 0px;
+width: 150px;
+height: 10px;
+margin-top: auto;
+margin-bottom: 10px;
+justify-content: center;
+align-items: center;
+padding: 20px;
+left: -23%;
+}
+.calc:hover{
+cursor: pointer;
+background-color: #D64A28;
+color: #fff;
+border-radius: 20px;
+border-width: 0px;
+width: 150px;
+height: 10px;  
+}
+
+.span_width {
+display: flex;
+position: relative;
+overflow: auto;
+font-size:20px;
+top:58%;
+left: -130%;
+}
+.output{
+    display: flex;
+position: relative;
+font-size:20px;
+left: -50%;
+top:58%;
+}
+
+.itemCalc{
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+
+}
+.value{
+    text-align: center;
+}
+
+
+@media screen and (max-width: 979px) {
+
+span {
+cursor: pointer;
+}
+
+body {
+margin: 0px 0px;
+padding-top: 20px;
+}
+
+.container{
+display: flex;
+flex-direction: column;
+margin-top: 120px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+    height: 150px;
+    left:37%;
+}
+.containerWrapper{
+height: 600px;
+display: flex;
+justify-content: center;
+font-family: "Manrope";
+font-size: 20px;
+font-weight: 600;
+background-color: #0937fd;
+color: white;
+/*padding: 50px;*/
+}
+.item{
+    display: flex;
+    margin-top: 5px;
+flex-direction: column;
+gap: 15px;
+text-align: center;
+left:7%;
+}
+
+.input { 
+width: 70px;
+border-radius: 20px;
+border-color: white; 
+border-width: 0px;
+border: none;
+text-align: center;
+height: 40px;
+font-family: "Manrope";
+justify-content: center;
+display: block;
+
+}
+.calc {
+display: flex;
+position: relative;
+cursor: pointer;
+border-radius: 20px;
+border-width: 0px;
+width: 150px;
+height: 10px;
+margin-top: 520px;
+margin-bottom: 10px;
+justify-content: center;
+align-items: center;
+padding: 20px;
+left: -27%;
+color:#000;
+}
+.calc:hover{
+cursor: pointer;
+background-color: #D64A28;
+color: #fff;
+border-radius: 20px;
+border-width: 0px;
+width: 150px;
+height: 10px;  
+}
+
+.span_width {
+display: flex;
+position: relative;
+overflow: auto;
+font-size:20px;
+top:70%;
+left:0%;
+}
+.output{
+    display: flex;
+position: relative;
+font-size:20px;
+left: 30%;
+top:72%;
+}
+
+.itemCalc{
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+
+}
+.value{
+    text-align: center;
+}
+
+}
+</style>
+<script>
+let a = document.querySelector("#a")
+let b = document.querySelector("#b")
+let c = document.querySelector("#c")
+let output = document.querySelector(".output")
+let calc2 = document.querySelector(".calc")
+// plus misus buttons
+//minus
+let MinFive =  document.querySelector(".MinFive")
+let MinFour =  document.querySelector(".MinFour")
+let MinThree =  document.querySelector(".MinThree")
+//plus
+let PlusFive =  document.querySelector(".PlusFive")
+let PlusFour =  document.querySelector(".PlusFour")
+let PlusThree =  document.querySelector(".PlusThree")
+
+
+a.value = 0
+b.value = 0
+c.value = 0
+output.value = 0
+let calc = (a, b, c) => {
+    return Math.round ((((a*5) + (b*4) + (c*3))/(a+b+c))*100)/100;
+    console.log(calc(5,3,1,0))
+};
+
+let render = () =>{
+output.textContent = ""
+if (isNaN(calc(Number(a.value), Number(b.value), Number(c.value)==true))){
+    output.textContent = 0
+} 
+else {
+output.textContent = calc(Number(a.value), Number(b.value), Number(c.value))}
+}
+calc2.addEventListener("click",()=>{
+render()
+})
+
+MinFive.addEventListener("click", ()=>{
+if(Number(a.value) != 0){
+    a.value = Number(a.value) - 1
+}
+})
+MinFour.addEventListener("click", ()=>{
+if(Number(b.value) != 0){
+    b.value = Number(b.value) - 1
+}
+})
+MinThree.addEventListener("click", ()=>{
+if(Number(c.value) != 0){
+    c.value = Number(c.value) - 1
+}
+})
+
+// plus section
+PlusFive.addEventListener("click", ()=>{
+    a.value = Number(a.value) + 1
+})
+PlusFour.addEventListener("click", ()=>{
+
+    b.value = Number(b.value) + 1
+
+})
+PlusThree.addEventListener("click", ()=>{
+
+    c.value = Number(c.value) + 1
+
+})
+
+</script>
